@@ -112,129 +112,218 @@ th{
     background-color: #eeeeee;
 }
 
-/* Mobile Responsive */
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
 @media (max-width: 768px) {
+
+    /* Prevent horizontal overflow */
+    html,
     body {
+        width: 100%;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
     }
 
-    .container {
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Main resume */
+    .resume {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
         display: block;
-        width: 100%;
-        min-height: 100vh;
     }
 
-    .left {
+
+    /* =========================
+       LEFT MENU
+       ========================= */
+
+    .sidebar {
         width: 100%;
-        padding: 14px 12px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        height: auto;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+
+        background: white;
     }
 
-    .left nav {
+    /* Hide profile from sidebar if your profile is already
+       displayed in the main resume */
+    .sidebar .profile {
+        display: none;
+    }
+
+
+    /* Menu becomes horizontal */
+    nav {
+        width: 100%;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: nowrap;
+
+        gap: 5px;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        padding: 5px 0;
     }
 
-    .left nav a {
-        margin-top: 0;
-        font-size: 12px;
-        padding: 6px 8px;
-        text-align: center;
-        line-height: 1.3;
+    nav a {
+        flex-shrink: 0;
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+
+        text-decoration: none;
+        color: #222;
+
+        border-radius: 5px;
     }
 
-    .right {
-        padding: 14px 12px 20px;
+    nav a:hover {
+        background: #333;
+        color: white;
     }
 
-    header {
-        position: static;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-left: 0;
-        padding: 0;
-    }
 
-    header center {
-        width: 100%;
-    }
-
-    header h1 {
-        font-size: 28px;
-        margin-bottom: 8px;
-    }
-
-    header h3 {
-        margin: 6px 0;
-        font-size: 16px;
-    }
-
-    header p {
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    #nav {
-        position: static;
-        margin: 10px auto 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    #nav img {
-        width: 150px;
-        height: 170px;
-        margin-left: 0;
-    }
+    /* =========================
+       MAIN CONTENT
+       ========================= */
 
     .content {
         width: 100%;
-        padding: 12px 0 18px;
+        max-width: 100%;
+
+        padding: 20px 16px;
+
+        overflow: visible;
     }
 
-    .content h1,
-    section h1,
-    .h {
-        font-size: 22px;
-        margin-bottom: 8px;
-    }
 
+    /* Every section uses full width */
     section {
+        width: 100%;
+        max-width: 100%;
+
         min-height: auto;
-        margin-bottom: 18px;
+
+        margin-bottom: 50px;
     }
 
-    section h1,
-    section h3 {
-        font-size: 18px;
+
+    /* Headings */
+    section h1 {
+        font-size: 26px;
+
+        line-height: 1.3;
+
+        margin-bottom: 15px;
+
+        word-break: normal;
+        overflow-wrap: normal;
     }
 
-    section p,
-    section li,
-    table,
-    th,
-    td {
-        font-size: 12px;
-        line-height: 1.5;
+
+    /* Paragraphs */
+    section p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px;
+        line-height: 1.7;
+
+        word-break: normal;
+        overflow-wrap: break-word;
     }
+
+
+    /* =========================
+       RESUME HEADER
+       ========================= */
+
+    .content img {
+        max-width: 100%;
+    }
+
+
+    /* If your profile image has a class */
+    .profile-image {
+        width: 120px;
+        height: 120px;
+
+        max-width: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        margin: 15px auto;
+    }
+
+
+    /* =========================
+       EDUCATION TABLE
+       ========================= */
 
     table {
         width: 100%;
+        max-width: 100%;
+
+        border-collapse: collapse;
+
         table-layout: fixed;
-        font-size: 10px;
+
+        font-size: 12px;
     }
 
     th,
     td {
-        padding: 5px;
+        padding: 8px 5px;
+
+        border: 1px solid #333;
+
         word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    th {
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       LINKS
+       ========================= */
+
+    a {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =========================
+       LISTS
+       ========================= */
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
     }
 }
