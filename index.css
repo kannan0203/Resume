@@ -111,219 +111,50 @@ th,td{
 th{
     background-color: #eeeeee;
 }
-
-/* =========================
-   MOBILE RESPONSIVE
-   ========================= */
-
 @media (max-width: 768px) {
 
-    /* Prevent horizontal overflow */
-    html,
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    /* Main resume */
-    .resume {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: 0;
-        display: block;
-    }
-
-
-    /* =========================
-       LEFT MENU
-       ========================= */
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-
-        padding: 10px;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
-
-        background: white;
-    }
-
-    /* Hide profile from sidebar if your profile is already
-       displayed in the main resume */
-    .sidebar .profile {
-        display: none;
-    }
-
-
-    /* Menu becomes horizontal */
-    nav {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-
-        gap: 5px;
-
-        overflow-x: auto;
-        white-space: nowrap;
-
-        padding: 5px 0;
-    }
-
-    nav a {
-        flex-shrink: 0;
-
-        padding: 10px 12px;
-
-        font-size: 13px;
-
-        text-decoration: none;
-        color: #222;
-
-        border-radius: 5px;
-    }
-
-    nav a:hover {
-        background: #333;
-        color: white;
-    }
-
-
-    /* =========================
-       MAIN CONTENT
-       ========================= */
-
     .content {
-        width: 100%;
-        max-width: 100%;
-
-        padding: 20px 16px;
-
-        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-
-    /* Every section uses full width */
     section {
         width: 100%;
-        max-width: 100%;
-
-        min-height: auto;
-
-        margin-bottom: 50px;
+        text-align: left;
     }
 
-
-    /* Headings */
     section h1 {
-        font-size: 26px;
-
-        line-height: 1.3;
-
-        margin-bottom: 15px;
-
-        word-break: normal;
-        overflow-wrap: normal;
+        text-align: left;
+        margin-left: 0;
     }
 
-
-    /* Paragraphs */
     section p {
-        width: 100%;
-        max-width: 100%;
-
-        font-size: 15px;
-        line-height: 1.7;
-
-        word-break: normal;
-        overflow-wrap: break-word;
+        text-align: left;
     }
 
-
-    /* =========================
-       RESUME HEADER
-       ========================= */
-
-    .content img {
-        max-width: 100%;
+    /* Career Objective comes first */
+    #career-objective {
+        order: 1;
     }
 
-
-    /* If your profile image has a class */
-    .profile-image {
-        width: 120px;
-        height: 120px;
-
-        max-width: 100%;
-
-        object-fit: cover;
-
-        display: block;
-
-        margin: 15px auto;
+    #education {
+        order: 2;
     }
 
-
-    /* =========================
-       EDUCATION TABLE
-       ========================= */
-
-    table {
-        width: 100%;
-        max-width: 100%;
-
-        border-collapse: collapse;
-
-        table-layout: fixed;
-
-        font-size: 12px;
+    #skills {
+        order: 3;
     }
 
-    th,
-    td {
-        padding: 8px 5px;
-
-        border: 1px solid #333;
-
-        word-break: break-word;
-        overflow-wrap: break-word;
+    #projects {
+        order: 4;
     }
 
-    th {
-        font-size: 12px;
+    #internships {
+        order: 5;
     }
 
-
-    /* =========================
-       LINKS
-       ========================= */
-
-    a {
-        max-width: 100%;
-        overflow-wrap: anywhere;
-    }
-
-
-    /* =========================
-       LISTS
-       ========================= */
-
-    ul {
-        padding-left: 20px;
-    }
-
-    li {
-        margin-bottom: 8px;
+    #certificate {
+        order: 6;
     }
 }
