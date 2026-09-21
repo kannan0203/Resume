@@ -1,6 +1,7 @@
-html{
+html {
     scroll-behavior: smooth;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -8,212 +9,340 @@ html{
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #111;
     overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.phone-shell {
+    width: 100%;
+    max-width: 100%;
+    background: #f2f2f2;
+}
+
+.status-bar,
+.browser-bar {
+    display: none;
 }
 
 .container {
     display: flex;
     width: 100%;
     min-height: 100vh;
+    background: #d9d7d4;
 }
 
 .left {
-    width: 220px;
-    background-color: #f0f0f0;
-    padding: 20px;
+    width: 240px;
+    background: rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 24px 18px 30px;
+}
+
+.left nav {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding-top: 40px;
+}
+
+.left nav a {
+    text-decoration: none;
+    color: #0f0f0f;
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.left nav a:hover {
+    color: #d96c00;
+    transition: 0.2s ease;
 }
 
 .right {
     flex: 1;
     min-width: 0;
-    background-color: #d0d0d0;
-    padding: 20px;
-}
-
-.left nav {
-    display:flex;
-    flex-direction: column;
-    gap: 18px;
-    margin: 0;
-    padding: 0;
-}
-
- nav a {
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: 16px;
-    margin-top: 40%;
-    
-}
-
-.left nav a:hover {
-    color: orange;
-    transition: color 0.3s ease;
-}
-
-header {
-    position: relative;
-    padding: 20px 170px 0 20px;
-    margin-left: 14%;
-}
-
-#nav {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#nav img {
-    width: 130px;
-    height: 190px;
-    object-fit: cover;
-    display: block;
-    margin-left: 19%;
+    padding: 18px 18px 30px;
 }
 
 .right h1 {
-    margin: 0;
-    text-align: centre;
-    font-weight: bolder;
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
-.content {
-    width: 100%;
-    padding: 20px 20px 40px;
-    overflow: hidden;
-    margin: 0;
+header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 18px;
 }
 
-.content h1 {
-    text-align: left;
-    margin-bottom: 10px;
+.profile-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-text h2 {
+    margin: 0 0 8px;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.profile-text p {
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+#nav {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+#nav img {
+    width: 180px;
+    height: 205px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+section {
+    margin-top: 20px;
+}
+
+section h2 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+section p,
+section li,
+section th,
+section td,
+section h3 {
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .content p {
     margin: 0;
-    line-height: 1.6;
 }
-table{
+
+table {
     width: 100%;
     border-collapse: collapse;
-    margin-top:20px ;
-
-}
-.h{
-    text-align: left;
-    margin-right: 100;
-}
-th,td{
-    border: 1px solid black;
-    text-align: left;
-}
-th{
-    background-color: #eeeeee;
+    margin-top: 10px;
 }
 
-/* Mobile Responsive */
+th,
+td {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+    word-break: break-word;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li + li {
+    margin-top: 5px;
+}
+
+.project h3,
+.intern h3 {
+    margin: 8px 0 6px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
-
     body {
-        margin: 0;
-        padding: 0;
+        background: #0e0e0e;
     }
 
-    .resume {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: 0;
+    .phone-shell {
+        max-width: 430px;
+        margin: 0 auto;
+        min-height: 100vh;
+        background: #efefef;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .status-bar {
         display: flex;
-        flex-direction: row;
-    }
-
-    /* LEFT MENU */
-    .sidebar {
-        width: 30%;
-        min-width: 110px;
-        height: auto;
-        position: sticky;
-        top: 0;
-
-        padding: 15px 8px;
-
-        border-right: 1px solid #333;
-        border-bottom: none;
-    }
-
-    .profile img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .profile h2 {
+        align-items: center;
+        justify-content: space-between;
+        height: 46px;
+        padding: 0 18px;
+        background: #111;
+        color: #fff;
         font-size: 16px;
+        font-weight: 700;
     }
 
-    .profile p {
-        font-size: 11px;
-    }
-
-    nav {
+    .status-icons {
         display: flex;
-        flex-direction: column;
-        gap: 5px;
+        align-items: center;
+        gap: 7px;
+        font-size: 14px;
     }
 
-    nav a {
-        font-size: 12px;
-        padding: 10px 5px;
+    .browser-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 64px;
+        padding: 0 14px;
+        background: #1d1d1d;
+        color: #f4f4f4;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .home-icon,
+    .plus,
+    .menu {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #f5f5f5;
+        opacity: 0.8;
+    }
+
+    .url {
+        flex: 1;
+        font-size: 14px;
         text-align: center;
+        letter-spacing: 0.1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
+    .badge {
+        min-width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #f2f2f2;
+        color: #141414;
+        font-size: 13px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    /* RIGHT CONTENT */
-    .content {
-        width: 70%;
-        min-width: 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1.15fr 1.7fr;
+        min-height: calc(100vh - 110px);
+        background: #e6e4e2;
+    }
 
-        padding: 15px;
+    .left {
+        background: rgba(18, 18, 18, 0.02);
+        border-right: 1px solid rgba(0, 0, 0, 0.14);
+        padding: 16px 8px 20px;
+    }
 
-        overflow: visible;
+    .left nav {
+        gap: 18px;
+        padding-top: 12px;
+    }
+
+    .left nav a {
+        font-size: 16px;
+        padding-left: 8px;
+    }
+
+    .right {
+        padding: 12px 12px 20px;
+    }
+
+    .right h1 {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
+
+    header {
+        margin-bottom: 10px;
+    }
+
+    .profile-text h2 {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .profile-text p {
+        font-size: 12px;
+    }
+
+    #nav {
+        width: 120px;
+    }
+
+    #nav img {
+        width: 120px;
+        height: 140px;
     }
 
     section {
-        min-height: auto;
-        margin-bottom: 40px;
+        margin-top: 12px;
     }
 
-    section h1 {
-        font-size: 22px;
-        word-break: normal;
+    section h2 {
+        font-size: 24px;
     }
 
-    section p {
-        font-size: 14px;
-        line-height: 1.6;
-
-        overflow-wrap: break-word;
+    section p,
+    section li,
+    section th,
+    section td,
+    section h3 {
+        font-size: 12px;
     }
+}
 
-
-    /* HEADER INFORMATION */
-    .content img {
+@media (max-width: 420px) {
+    .phone-shell {
         max-width: 100%;
-        height: auto;
     }
 
-
-    /* EDUCATION TABLE */
-    table {
-        width: 100%;
-        table-layout: fixed;
-        font-size: 10px;
+    .container {
+        grid-template-columns: 1fr 1.8fr;
     }
 
-    th,
-    td {
-        padding: 5px;
-        word-break: break-word;
+    .left nav a {
+        font-size: 14px;
+    }
+
+    .right h1 {
+        font-size: 38px;
     }
 }
