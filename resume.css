@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --navy: #1a2e4d;
     --navy-2: #223d66;
     --bg: #edf1f5;
@@ -10,12 +10,12 @@
     --shadow: 0 18px 40px rgba(24, 39, 75, 0.12);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -76,6 +76,10 @@ body {
     flex: 1;
     background: #f2f4f7;
     padding: 26px 28px 30px;
+}
+.right a{
+    text-decoration: none;
+    color: black;
 }
 
 header {
@@ -138,8 +142,13 @@ header p {
     display: block;
 }
 
-main,
-section {
+.content,
+.objective,
+.education,
+.skill,
+.project,
+.intern,
+.cert {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -148,19 +157,26 @@ section {
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
 }
 
-main h1,
-section h1 {
+.content h1,
+.objective h1,
+.education h1,
+.skill h1,
+.project h1,
+.intern h1,
+.cert h1 {
     margin: 0 0 14px;
     font-size: clamp(1.7rem, 2vw, 2.2rem);
     color: var(--navy);
 }
 
-main p,
-section p,
-section li,
-main li,
-section td,
-section th {
+.content p,
+.objective p,
+.skill li,
+.project li,
+.intern li,
+.cert li,
+.education td,
+.education th {
     font-size: 1rem;
     line-height: 1.7;
     color: var(--text);
@@ -179,6 +195,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    overflow: hidden;
 }
 
 th,
@@ -259,8 +276,14 @@ h3 {
         font-size: 0.9rem;
     }
 
-    main,
-    section {
+    .content,
+    .objective,
+    .education,
+    .skill,
+    .project,
+    .intern,
+    .cert {
         padding: 18px 16px;
     }
 }
+
